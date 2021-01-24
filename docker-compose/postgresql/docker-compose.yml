@@ -8,7 +8,9 @@ services:
       - 5432:5432
     restart: always
     environment:
-      POSTGRES_PASSWORD: secretpasssword
+      - POSTGRES_PASSWORD=secretpasssword
+      - POSTGRES_DB=my_test_db
+      - POSTGRES_USER=postgres
 
 volumes:
   db-data:
