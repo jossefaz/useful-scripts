@@ -6,7 +6,10 @@ services:
       - db-data:/var/lib/postgresql/data
     ports:
       - 5432:5432
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: secretpasssword
 
 volumes:
   db-data:
-    driver: localcd
+    driver: local
